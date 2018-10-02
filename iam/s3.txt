@@ -1,0 +1,41 @@
+//Console Access for a bucket
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                  "arn:aws:s3:::<bucket name>",
+                  "arn:aws:s3:::<bucket name>/*"
+            ]
+        }
+    ]
+}
+
+//Programmatic Access  (Include delete bucket and create permission)
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1507141120000",
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<bucket name>",
+                "arn:aws:s3:::<bucket name>/*"
+            ]
+        }
+    ]
+}
