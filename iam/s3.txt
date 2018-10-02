@@ -1,4 +1,4 @@
-//Console Access for a bucket
+//Console full access for a bucket
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -22,7 +22,7 @@
     ]
 }
 
-//Programmatic Access  (Include delete bucket and create permission)
+//Programmatic access full permission
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -31,6 +31,26 @@
             "Effect": "Allow",
             "Action": [
                 "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<bucket name>",
+                "arn:aws:s3:::<bucket name>/*"
+            ]
+        }
+    ]
+}
+
+//Programmatic access limited permission
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1507141120000",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
             ],
             "Resource": [
                 "arn:aws:s3:::<bucket name>",
