@@ -7,7 +7,7 @@ const params = {
 	Bucket: 'experion-tmp',
 	Key: 'ddd.csv',
 	ExpressionType: 'SQL',
-   Expression: 'SELECT * FROM S3Object',
+   Expression: 'SELECT COUNT(*) FROM S3Object',
 	InputSerialization: {
 		CSV: {
 			FileHeaderInfo: 'USE',
